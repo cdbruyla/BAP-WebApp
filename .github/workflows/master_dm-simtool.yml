@@ -51,5 +51,5 @@ jobs:
         with:
           app-name: 'dm-simtool'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_63D21F2869E5423A901DC6A38F46807C }}
-          package: .
+          publish-profile: $
+          package: ./dist/dm-simtool
