@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ef06d717-de64-4d99-879e-942c285e1de8/resourceGroups/bap-skyline/providers/Microsoft.Web/sites/dm-simtool",
+    "appService.deploySubpath": "."
+}
