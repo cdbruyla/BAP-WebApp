@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
 import { BlobInService} from './blob-in.service'
+import {Component} from '@angular/core';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressBarMode} from '@angular/material/progress-bar';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,4 +23,10 @@ export class AppComponent {
       this.blobList = list
     })
   }
+}
+export class ProgressBarConfigurableExample {
+  color: ThemePalette = 'primary';
+  mode: ProgressBarMode = 'determinate';
+  value = 50;
+  bufferValue = 75;
 }

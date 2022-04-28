@@ -1,4 +1,5 @@
 import { ErrorHandler, Injectable } from '@angular/core';
+import { DefaultAzureCredential } from "@azure/identity";
 import { BlobServiceClient, ContainerClient } from '@azure/storage-blob';
 
 @Injectable({
@@ -18,12 +19,6 @@ export class BlobInService {
     }
 
     return result;
-  }
-
-  public uploadBlob(content: Blob, name: string, client: ContainerClient, handler: () => void) {
-    let blockBlobClient = client.getBlockBlobClient(name);
-    blockBlobClient.uploadData(content, { blobHTTPHeaders: { blobContentType: content.type } })
-      .then(() => handler())
   }
 
   private containerClient(): ContainerClient {
