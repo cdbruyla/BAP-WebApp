@@ -2,6 +2,8 @@ import { BlobInService} from './blob-in.service'
 import {Component} from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressBarMode} from '@angular/material/progress-bar';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 @Component({
   selector: 'app-root',
@@ -30,3 +32,17 @@ export class ProgressBarConfigurableExample {
   value = 50;
   bufferValue = 75;
 }
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA5uANDvA03nwnHhB5I0mJ-e805v5KfaxI",
+  authDomain: "angularwebappbap.firebaseapp.com",
+  projectId: "angularwebappbap",
+  storageBucket: "angularwebappbap.appspot.com",
+  messagingSenderId: "631292642489",
+  appId: "1:631292642489:web:bfd8fa0878057988be4768",
+  measurementId: "G-3371BBSLW6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

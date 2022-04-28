@@ -14,6 +14,7 @@
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
+    "@angular/fire": "^7.3.0",
     "@angular/forms": "~13.3.0",
     "@angular/material": "^13.3.4",
     "@angular/platform-browser": "~13.3.0",
@@ -23,6 +24,7 @@
     "@azure/storage-blob": "^12.9.0",
     "body-parser": "^1.20.0",
     "express": "^4.17.3",
+    "firebase": "^9.6.11",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
