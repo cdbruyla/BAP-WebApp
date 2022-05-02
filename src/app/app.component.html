@@ -29,12 +29,14 @@
     <table id="blobTable">
     <th width="25%"> Blob Name</th>
     <th width="35%"> TimeFrames captured</th>
+    <th style="text-align:center" width="8%"> Target </th>
     <th style="text-align:center" width="8%"> Start Recording</th>
     <th style="text-align:center" width="8%"> Stop Recording</th>
     <th style="text-align:center" width = "15%"> Progress </th>
       <tr *ngFor = "let blob of blobMap | keyvalue">
         <td> {{ blob.key }} </td>
         <td> <li *ngFor = "let value of blob.value"> {{ value.toString() }} </li> </td>
+        <td> <input type="number" id="dest" name="dest" min="0" max="1000"> </td>
         <td style="text-align:center"> <button class="btn"><i class="fa fa-play"></i></button> </td>
         <td style="text-align:center"> <button class="btn"><i class="fa fa-stop"></i></button> </td>
         <td style="text-align:center"> <label for="file">  </label>
