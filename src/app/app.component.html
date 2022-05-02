@@ -84,6 +84,7 @@
   <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:25px; font-weight:bold;">DataMiner Simulation tool</p>
 </div>
 
+
 <!-- Background -->
 <div class="content" role="main">
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
@@ -92,17 +93,20 @@
   </svg>
 </div>
 
+
 <div id="div1">
   <!-- Table -->
   <h1>Replay Dataminer</h1>
   <div style="height:250px;">
     <table id="blobTable">
-    <th width="60%"> Blob Name</th>
+    <th width="25%"> Blob Name</th>
+    <th width="35%"> TimeFrames captured</th>
     <th style="text-align:center" width="8%"> Start Recording</th>
     <th style="text-align:center" width="8%"> Stop Recording</th>
     <th style="text-align:center" width = "15%"> Progress </th>
-      <tr *ngFor = "let blob of blobList">
-        <td>{{ blob }} </td>
+      <tr *ngFor = "let blob of blobMap | keyvalue">
+        <td> {{ blob.key }} </td>
+        <td> <li *ngFor = "let value of blob.value"> {{ value.toString() }} </li> </td>
         <td style="text-align:center"> <button class="btn"><i class="fa fa-play"></i></button> </td>
         <td style="text-align:center"> <button class="btn"><i class="fa fa-stop"></i></button> </td>
         <td style="text-align:center"> <label for="file">  </label>

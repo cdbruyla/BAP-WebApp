@@ -10,15 +10,25 @@ export class BlobInService {
   storageAccount = "storagebap";
   storageContainer = "bap-storage-container";
 
-  public async listBlobs(): Promise<string[]> {
-    let result: string[] = []
+  public async listBlobs(): Promise<Map<string, Array<string>>> {
+    let map = new Map<string, Array<string>>();
 
     let blobs = this.containerClient().listBlobsFlat();
+    let current_elID = "";
+    let currentArray = new Array<string>();
     for await (const blob of blobs) {
-      result.push(blob.name)
+      let elID = blob.name.split("/");
+      if(!(current_elID === elID[0]) && !(current_elID === "")) {
+        map.set(current_elID, currentArray);
+        currentArray = new Array<string>();
+      }
+      if(!map.has(elID[0])) {
+        current_elID = elID[0];
+      }
+      currentArray.push(elID[1].replace(".json", ""));
     }
-
-    return result;
+    map.set(current_elID, currentArray);
+    return map;
   }
 
   private containerClient(): ContainerClient {
