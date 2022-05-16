@@ -1,0 +1,1 @@
+{"ast":null,"code":"// Copyright (c) Microsoft Corporation.\n// Licensed under the MIT license.\nimport { v4 as uuidv4 } from \"uuid\";\n/**\n * Generated Universally Unique Identifier\n *\n * @returns RFC4122 v4 UUID.\n * @internal\n */\n\nexport function generateUuid() {\n  return uuidv4();\n} //# sourceMappingURL=uuid.js.map","map":null,"metadata":{},"sourceType":"module"}

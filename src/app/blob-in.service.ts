@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-import { BlobServiceClient, ContainerClient } from '@azure/storage-blob';
+import { BlobServiceClient, ContainerClient, } from '@azure/storage-blob';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root'})
 
 export class BlobInService {
 
-  storageAccount = "storagebap";
-  storageContainer = "bap-storage-container";
+  private readonly storageAccount = "storagebap";
+  private readonly storageContainer = "bap-storage-container";
 
   public async listBlobs(): Promise<Map<string, Array<string>>> {
     let map = new Map<string, Array<string>>();
-
     let blobs = this.containerClient().listBlobsFlat();
     let currentID = "";
     let currentArray = new Array<string>();
@@ -33,6 +30,6 @@ export class BlobInService {
 
   private containerClient(): ContainerClient {
     return new BlobServiceClient(`https://${this.storageAccount}.blob.core.windows.net?`)
-            .getContainerClient(this.storageContainer);
+    .getContainerClient(this.storageContainer);
   }
 }
