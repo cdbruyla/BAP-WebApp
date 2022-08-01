@@ -12,7 +12,7 @@ import { ApiService } from './api.service';
 export class AppComponent {
 
   blobMap = new Map<string, Array<string>>();
-  private API_URL = "http://localhost:7071/api/HttpTrigger";
+  private API_URL = "<your_API_URL>";
 
   public newEID : number = 0;
   public newDMID : number = 0;
